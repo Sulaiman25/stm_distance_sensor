@@ -11,4 +11,4 @@ The project spans hardware design, real time firmware development, embedded Linu
 up, inter processor communication, and application level software serving as a demonstration
 of a modern heterogeneous embedded system.
 
-For more detailed documentation see docs folder
+For more detailed documentation see docs folder or for a video see this link https://youtu.be/8nIt7zsRcJg?si=upIalE33QjS0QFfQ
