@@ -16,5 +16,5 @@ STM32MP157C-DK2 Distance Monitoring System
 - Inter-processor communication (OpenAMP / RPMsg)
 - Application-level display using GTK
 - Documentation and Demo
-- Full technical write-up:
+- Full technical write-up: See docs folder
 - Demo video: https://youtu.be/8nIt7zsRcJg?si=upIalE33QjS0QFfQ
