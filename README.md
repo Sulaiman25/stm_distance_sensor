@@ -1,14 +1,20 @@
-This project works with the STM32MP157C-DK2, using both processing cores of the board
-for their intended purposes, the Cortex-M4 handling real time sensor acquisition and the
-Cortex-A7 running Linux for application-level display and networking.
-I used an HC-SR04 ultrasonic distance sensor interfaced with the Cortex-M4, which handles
-the precise timing required to generate trigger pulses and measure echo responses. Measured
-distance values are sent to the Linux side via OpenAMP RPMsg, an inter processor communication framework built on shared memory. On the Linux side, I first wanted to make
-a display interface of a web based dashboard over USB networking but I then thought it
-would make more sense to display it directly on the boards built in display so I developed a
-small GTK application to do it.
-The project spans hardware design, real time firmware development, embedded Linux bring
-up, inter processor communication, and application level software serving as a demonstration
-of a modern heterogeneous embedded system.
+STM32MP157C-DK2 Distance Monitoring System
 
-For more detailed documentation see docs folder or for a video see this link https://youtu.be/8nIt7zsRcJg?si=upIalE33QjS0QFfQ
+This project implements a heterogeneous embedded system on the STM32MP157C-DK2, using both cores for their intended purposes.
+
+Cortex-M4 handles real-time sensor acquisition
+Cortex-A7 (Linux) handles display and application-level processing
+
+An HC-SR04 ultrasonic sensor is interfaced with the M4, which generates the trigger pulse and measures the echo response using microsecond-level timing via the DWT cycle counter. Distance values are transmitted to the Linux side through OpenAMP RPMsg, enabling inter-processor communication over shared memory.
+
+On the A7, a Python GTK application runs fullscreen on the board’s touchscreen and displays live distance readings with color-based feedback, allowing the system to operate independently without an external device.
+
+What This Project Covers
+Hardware interfacing (HC-SR04 + voltage divider)
+Real-time firmware development (Cortex-M4)
+Embedded Linux bring-up (Cortex-A7)
+Inter-processor communication (OpenAMP / RPMsg)
+Application-level display using GTK
+Documentation and Demo
+Full technical write-up:
+Demo video: https://youtu.be/8nIt7zsRcJg?si=upIalE33QjS0QFfQ
